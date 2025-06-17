@@ -30,17 +30,21 @@ ul {
 }
 
 a {
+    display: inline-block;
+    padding: 8px 4px; /* ensures touch target ~48px tall */
+    color: black;
+    text-decoration: none;
     transform: translateX(-50%);
-    color: black;  
 }
 
 li {
     text-align: center;
     padding-left: 10px;
     padding-right: 10px;
+    margin-bottom: 6px; /* adds space between links */
 }
 
-#footer{
+#footer {
     position: absolute;
     bottom: 20px;
 }

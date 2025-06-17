@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROOFOFCONCEPT Prod.</title>
+    <meta name="description" content="Canadian-based experimental tech-production company.">
+    <meta name="keywords" content="experimental film, short films, Canadian cinema, Jack O'Keeffe, art films, indie production, PROOFOFCONCEPT">
+    <meta name="author" content="Jack O'Keeffe">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="PROOFOFCONCEPT Prod.">
+    <meta property="og:description" content="Experimental short films blending cinema with technology">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://proof-of-concept.ca">
+    <meta property="og:locale" content="en_CA">
+    <meta property="og:image" content="https://proof-of-concept.ca/assets/preview.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="main-content">
+        <!-- Content is dynamically loaded here -->
+    </div>
+
+    <div id="footer">
+        <p><span class="nav-link" onclick="loadPage('about')">about</span> // <a href="mailto:contact@proof-of-concept.ca" class="external-link">contact</a></p>
+    </div>
+
+    <script>
+        // Content data for all pages
+        const pageContent = {
+            home: `
+                <p>PROOFOFCONCEPT Prod.</p>
+                <p id="coming-soon">short films:</p>
+                <ul>
+                    <li><span class="nav-link" onclick="loadPage('love-one')">love.1 (2025)</span></li>
+                    <li><span class="nav-link" onclick="loadPage('which-way')">which//way (2025)</span></li>
+                </ul>
+                
+                <p id="coming-soon">coming soon:</p>
+                <ul>
+                    <li><span class="nav-link" onclick="loadPage('lovers')">The Lovers (2026)</span></li>
+                    <li><span class="nav-link" onclick="loadPage('horror')">HORROR (2026)</span></li>
+                </ul>
+            `,
+            
+            about: `
+                <p>about:</p>
+                <ul>
+                    <li>focused on unconventional approaches to storytelling which incorporate modern technology.</li>
+                    <li><a href="mailto:contact@proof-of-concept.ca" class="external-link">email</a> // <a target="_blank" href="https://www.instagram.com/youngthugfan40/" class="external-link">instagram</a></li>
+                </ul>
+                <p><span class="nav-link" onclick="loadPage('home')">back</span></p>
+            `,
+            
+            'love-one': `
+                <p>love.1 (2025)</p>
+                <p>40 seconds, instagram reel</p>
+                <br>
+                <ul>
+                    <li>a visual-poem on the themes of love.</li>
+                    <li><a target="_blank" href="https://www.instagram.com/reel/DKX_rDKygW5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="external-link">watch here</a> // <a target="_blank" href="https://letterboxd.com/film/love1/" class="external-link">log & rate on letterboxd</a></li>
+                </ul>
+                <p><span class="nav-link" onclick="loadPage('home')">back</span></p>
+            `,
+            
+            'which-way': `
+                <p>which//way (2025)</p>
+                <p>3 minutes, instagram reel</p>
+                <br>
+                <ul>
+                    <li>stock footage tells the story of two lives — before and after a financial crisis.</li>
+                    <li><a target="_blank" href="" class="external-link">coming soon</a> // <a target="_blank" href="https://letterboxd.com/film/which-way/" class="external-link">add to your watchlist</a></li>
+                </ul>
+                <p><span class="nav-link" onclick="loadPage('home')">back</span></p>
+            `,
+            
+            lovers: `
+                <p>The Lovers (2026)</p>
+                <ul>
+                    <li>follows pivotal moments between two people, who may or may not be in a relationship.</li>
+                </ul>
+                <p><span class="nav-link" onclick="loadPage('home')">back</span></p>
+            `,
+            
+            horror: `
+                <p>HORROR (2026)</p>
+                <ul>
+                    <li>a multimedia film experience tailored to the viewer's worst fears.</li>
+                </ul>
+                <p><span class="nav-link" onclick="loadPage('home')">back</span></p>
+            `
+        };
+
+        // Function to load page content
+        function loadPage(page) {
+            const container = document.getElementById('main-content');
+            
+            // Add fade out effect
+            container.classList.add('fade-out');
+            
+            // Wait for fade out to complete, then change content
+            setTimeout(() => {
+                container.innerHTML = pageContent[page] || pageContent.home;
+                container.classList.remove('fade-out');
+            }, 150);
+        }
+
+        // Load home page by default
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPage('home');
+        });
+
+        // Handle browser back/forward buttons
+        window.addEventListener('popstate', function(e) {
+            const page = e.state ? e.state.page : 'home';
+            loadPage(page);
+        });
+
+        // Update browser history when navigating
+        const originalLoadPage = loadPage;
+        loadPage = function(page) {
+            originalLoadPage(page);
+            if (page !== 'home') {
+                history.pushState({page: page}, '', '#' + page);
+            } else {
+                history.pushState({page: 'home'}, '', './');
+            }
+        };
+    </script>
+</body>
+</html>

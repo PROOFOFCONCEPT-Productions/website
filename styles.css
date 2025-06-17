@@ -1,7 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: relative; 
+    font-family: sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+}
+
+#coming-soon {
+    padding-top: 10px;
+}
+
 a {
     display: inline-block;
-    padding: 4px 0; /* keeps visual compactness */
-    min-height: 44px; /* meets accessibility without bulky look */
+    padding: 4px 0;
+    min-height: 44px; /* accessibility: touch target */
     line-height: 1.2;
     color: black;
     text-decoration: none;
@@ -11,5 +43,10 @@ a {
 li {
     text-align: center;
     padding: 2px 10px;
-    margin-bottom: 4px; /* very subtle spacing */
+    margin-bottom: 4px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 20px;
 }

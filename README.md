@@ -1,4 +1,4 @@
-### changes (06/18):
+### changelog (06.18):
 - links are more reactive when clicked
 - pages no longer load separate HTML files - making site quicker to load
 - sounds now play when buttons/links are clicked

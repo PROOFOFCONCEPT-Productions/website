@@ -1,4 +1,10 @@
-### changelog (06.18):
+### changelog (06/19):
+- pages have been redone to be clearer, provide more info
+- added links to both instagram & email on home page
+- added slight loading transition
+- added favicons
+
+### changelog (06/18):
 - links are more reactive when clicked
 - pages no longer load separate HTML files - making site quicker to load
 - sounds now play when buttons/links are clicked

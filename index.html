@@ -3,18 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROOF-OF-CONCEPT Produdctions</title>
-    <meta name="description" content="Canadian-based experimental film production company.">
+    <title>PROOFOFCONCEPT Productions</title>
+    <meta name="description" content="Canadian-based experimental film-production company.">
     <meta name="keywords" content="experimental film, short films, Canadian cinema, Jack O'Keeffe, art films, indie production, PROOFOFCONCEPT, Canadian experimental cinema, tech-integrated storytelling, avant-garde short films">
     <meta name="author" content="Jack O'Keeffe">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#000000">
-    <meta property="og:title" content="PROOFOFCONCEPT Prod.">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="PROOFOFCONCEPT Productions">
     <meta property="og:description" content="Experimental short films blending cinema with technology">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://proof-of-concept.ca">
     <meta property="og:locale" content="en_CA">
     <meta property="og:image" content="https://proof-of-concept.ca/assets/preview.jpg">
+
+        <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico">
+
+    <!-- Android -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicons/android-chrome-512x512.png">
+
+    <!-- Apple -->
+    <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
+
+    <!-- Site Manifest -->
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
     <style>
         * {
             margin: 0;
@@ -45,6 +61,15 @@
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+            overflow-x: hidden;
+        }
+
+        @media (max-width: 767px) {
+            body, html {
+                align-items: center;
+                padding: 20px;
+                overflow: hidden;
+            }
         }
 
         body.dark-theme {
@@ -88,10 +113,51 @@
             }
         }
 
+        /* Social icons in bottom right */
+        #social-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        #social-icons:hover {
+            opacity: 1;
+        }
+
+        .social-icon {
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .social-icon:hover {
+            opacity: 0.7;
+            transform: scale(1.1);
+        }
+
+        .social-icon:active {
+            transform: translateY(1px) scale(1.1);
+            transition: all 0.1s ease;
+        }
+
+        @media (max-width: 767px) {
+            #social-icons {
+                display: none;
+            }
+        }
+
         .container {
             text-align: center;
             opacity: 1;
             transition: opacity 0.3s ease;
+            max-width: 90%;
         }
 
         .container.fade-out {
@@ -135,6 +201,15 @@
         #footer {
             position: absolute;
             bottom: 20px;
+        }
+
+        @media (max-width: 767px) {
+            #footer {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
 
         .nav-link {
@@ -358,12 +433,16 @@
             left: 20px;
             font-size: 12px;
             opacity: 0.3;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
             z-index: 1000;
+            padding: 4px 8px;
+            border-radius: 6px;
         }
 
         #shortcuts-hint:hover {
             opacity: 1;
+            background-color: black;
+            color: white;
         }
 
         .shortcut-key {
@@ -443,12 +522,481 @@
         .reset-button:active {
             transform: translateY(1px);
         }
+
+        /* Main page title styling */
+        .main-title {
+            font-size: 1.5em;
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+
+        /* About page specific styles */
+        .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.about-header {
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+.about-title {
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.8em;
+    line-height: 1.2;
+}
+
+.about-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.about-section {
+    text-align: center;
+}
+
+.about-section-title {
+    font-size: 0.85em;
+    text-transform: lowercase;
+    opacity: 0.6;
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+}
+
+.about-description {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1em;
+}
+
+.about-description p {
+    margin-bottom: 8px;
+}
+
+.about-list {
+    display: inline-block;
+    text-align: left;
+    gap: 6px;
+    font-size: 0.9em;
+}
+
+.about-item {
+    position: relative;
+}
+
+.about-links {
+    text-align: center;
+}
+
+.about-links a {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.about-footer {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+        @media (max-width: 767px) {
+            .about-container {
+                padding: 12px;
+                gap: 12px;
+                max-width: 100%;
+            }
+            
+            .about-title {
+                font-size: 1.6em;
+            }
+            
+            .about-content {
+                gap: 15px;
+            }
+        }
+
+        .numbered-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            margin: 3px 0 10px 0;
+            font-size: 0.9em;
+        }
+
+        .numbered-item {
+            text-align: left;
+            position: relative;
+        }
+
+        .help-icon {
+            font-size: 0.7em;
+            opacity: 0.6;
+            cursor: help;
+            margin-left: 3px;
+            position: relative;
+            vertical-align: super;
+            transition: opacity 0.3s ease;
+        }
+
+        .help-icon:hover {
+            opacity: 1;
+        }
+
+        .help-icon:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+        .tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e8e8e8;
+    color: #333;
+    padding: 8px 12px;
+    font-size: 0.75em;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    margin-bottom: 8px;
+    width: 280px;
+    text-align: center;
+    line-height: 1.4;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    pointer-events: none;
+    letter-spacing: 0.02em;
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #e8e8e8;
+}
+
+body.dark-theme .tooltip {
+    background-color: #3a3a3a;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-theme .tooltip::after {
+    border-top-color: #3a3a3a;
+}
+
+        @media (max-width: 767px) {
+            .help-icon {
+                display: none;
+            }
+        }
+
+        .contact-links {
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .back-link {
+            margin-top: 10px;
+        }
+
+        /* Film page specific styles */
+        .film-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+        .film-header {
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+    width: 100%;
+}
+
+        .film-title {
+    margin-bottom: 6px;
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.8em;
+    line-height: 1.2;
+}
+
+        /* Film tags styling */
+        .film-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        .film-tag {
+            background-color: rgba(128, 128, 128, 0.1);
+            color: var(--text-color);
+            opacity: 0.8;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 0.75em;
+            font-weight: 500;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            text-transform: lowercase;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+
+        .film-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+        .film-section {
+            text-align: center;
+        }
+
+        .film-section-title {
+    font-size: 0.85em;
+    text-transform: lowercase;
+    opacity: 0.6;
+    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+}
+
+        .film-description {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1em;
+}
+
+        .film-description p {
+            margin-bottom: 8px;
+        }
+
+        .film-links {
+            text-align: center;
+        }
+
+        .film-links a {
+            display: inline-block;
+            margin: 0 4px;
+        }
+
+        .film-meta {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.85em;
+    opacity: 0.7;
+}
+
+        .film-meta-item {
+            text-align: center;
+        }
+
+        .film-meta-label {
+            display: block;
+            font-size: 0.8em;
+            text-transform: lowercase;
+            opacity: 0.6;
+            margin-bottom: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .film-meta-value {
+            font-weight: 500;
+        }
+
+        .film-footer {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+        .back-link {
+            margin: 0;
+        }
+
+        @media (max-width: 767px) {
+    body, html {
+        align-items: center;
+        padding: 20px;
+        overflow: hidden;
+    }
+    
+    .film-container {
+        padding: 12px;
+        gap: 12px;
+        max-width: 100%;
+    }
+    
+    .film-title {
+        font-size: 1.6em;
+    }
+    
+    .film-meta {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .film-content {
+        gap: 15px;
+    }
+}
+
+/* Home page specific styles */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.home-header {
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.home-title {
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    font-size: 1.8em;
+    line-height: 1.2;
+}
+
+.home-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.home-section {
+    text-align: center;
+}
+
+.home-section-title {
+    font-size: 0.85em;
+    text-transform: lowercase;
+    opacity: 0.6;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+}
+
+.home-films {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.home-film-item {
+    padding: 2px 0;
+}
+
+@media (max-width: 767px) {
+    .home-container {
+        padding: 12px;
+        gap: 18px;
+        max-width: 100%;
+    }
+    
+    .home-title {
+        font-size: 1.4em;
+        white-space: nowrap;
+    }
+    
+    .home-content {
+        gap: 20px;
+    }
+}
+
+/* Fade-in animation for UI elements */
+.fade-in-element {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.fade-in-element.loaded {
+    opacity: 1;
+}
+
+/* Apply fade-in to specific elements */
+#settings-toggle.fade-in-element {
+    opacity: 0;
+}
+
+#settings-toggle.fade-in-element.loaded {
+    opacity: 0.7;
+}
+
+#social-icons.fade-in-element {
+    opacity: 0;
+}
+
+#social-icons.fade-in-element.loaded {
+    opacity: 0.7;
+}
+
+#shortcuts-hint.fade-in-element {
+    opacity: 0;
+}
+
+#shortcuts-hint.fade-in-element.loaded {
+    opacity: 0.3;
+}
+
+#footer.fade-in-element {
+    opacity: 0;
+}
+
+#footer.fade-in-element.loaded {
+    opacity: 1;
+}
     </style>
 </head>
 <body>
-    <button id="settings-toggle">⚙</button>
+    <button id="settings-toggle" class="fade-in-element">⚙</button>
 
-    <div id="shortcuts-hint">
+    <div id="social-icons" class="fade-in-element">
+        <a href="mailto:contact@proof-of-concept.ca" class="social-icon">@</a>
+        <a href="https://www.instagram.com/youngthugfan40/" target="_blank" class="social-icon">IG</a>
+    </div>
+
+    <div id="shortcuts-hint" class="fade-in-element">
         <span class="shortcut-key" data-key="h">h</span>: home • 
         <span class="shortcut-key" data-key="a">a</span>: about • 
         <span class="shortcut-key" data-key="c">c</span>: contact • 
@@ -501,7 +1049,7 @@
 
             <div class="setting-group">
                 <label class="setting-label" for="title-input">tab title:</label>
-                <input type="text" id="title-input" class="title-input" value="PROOFOFCONCEPT Prod.">
+                <input type="text" id="title-input" class="title-input" value="PROOFOFCONCEPT Productions">
             </div>
 
             <div class="setting-group">
@@ -521,7 +1069,7 @@
         <!-- Content is dynamically loaded here -->
     </div>
 
-    <div id="footer">
+    <div id="footer" class="fade-in-element">
         <p><span class="nav-link" onclick="loadPage('about')">about</span> // <a href="mailto:contact@proof-of-concept.ca" class="external-link">contact</a></p>
     </div>
 
@@ -536,7 +1084,7 @@
             bgColor: 'white',
             textColor: 'black',
             drawColor: 'black',
-            title: 'PROOFOFCONCEPT Prod.',
+            title: 'PROOFOFCONCEPT Productions',
             performanceMode: isMobile() // Default to performance mode on mobile
         };
 
@@ -606,68 +1154,272 @@
 
         // Content data for all pages
         const pageContent = {
-            home: `
-                <p>PROOFOFCONCEPT Prod.</p>
-                <p id="coming-soon">short films:</p>
-                <ul>
-                    <li><span class="nav-link" onclick="loadPage('love-one')">love.1 (2025)</span></li>
-                    <li><span class="nav-link" onclick="loadPage('which-way')">which//way (2025)</span></li>
-                </ul>
-                
-                <p id="coming-soon">coming soon:</p>
-                <ul>
-                    <li><span class="nav-link" onclick="loadPage('lovers')">The Lovers (2026)</span></li>
-                    <li><span class="nav-link" onclick="loadPage('horror')">HORROR (2026)</span></li>
-                </ul>
-            `,
-            
-            about: `
-                <p>about:</p>
-                <ul>
-                    <li>focused on unconventional approaches to storytelling which incorporate modern technology.</li>
-                    <li><a href="mailto:contact@proof-of-concept.ca" class="external-link">email</a> // <a target="_blank" href="https://www.instagram.com/youngthugfan40/" class="external-link">instagram</a></li>
-                </ul>
-                <p><span class="nav-link" onclick="loadPage('home')">back</span></p>
-            `,
-            
-            'love-one': `
-                <p>love.1 (2025)</p>
-                <p>40 seconds, instagram reel</p>
-                <br>
-                <ul>
-                    <li>a visual-poem on the themes of love.</li>
-                    <li><a target="_blank" href="https://www.instagram.com/reel/DKX_rDKygW5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="external-link">watch here</a> // <a target="_blank" href="https://letterboxd.com/film/love1/" class="external-link">log & rate on letterboxd</a></li>
-                </ul>
-                <p><span class="nav-link" onclick="loadPage('home')">back</span></p>
-            `,
-            
-            'which-way': `
-                <p>which//way (2025)</p>
-                <p>3 minutes, instagram reel</p>
-                <br>
-                <ul>
-                    <li>stock footage tells the story of two lives — before and after a financial crisis.</li>
-                    <li><a target="_blank" href="" class="external-link">coming soon</a> // <a target="_blank" href="https://letterboxd.com/film/which-way/" class="external-link">add to your watchlist</a></li>
-                </ul>
-                <p><span class="nav-link" onclick="loadPage('home')">back</span></p>
-            `,
-            
-            lovers: `
-                <p>The Lovers (2026)</p>
-                <ul>
-                    <li>follows pivotal moments between two people, who may or may not be in a relationship.</li>
-                </ul>
-                <p><span class="nav-link" onclick="loadPage('home')">back</span></p>
-            `,
-            
-            horror: `
-                <p>HORROR (2026)</p>
-                <ul>
-                    <li>a multimedia film experience tailored to the viewer's worst fears.</li>
-                </ul>
-                <p><span class="nav-link" onclick="loadPage('home')">back</span></p>
-            `
-        };
+    home: `
+<div class="home-container">
+    <div class="home-header">
+        <h1 class="home-title">PROOFOFCONCEPT Prod.</h1>
+    </div>
+    
+    <div class="home-content">
+        <div class="home-section">
+            <div class="home-section-title">short films</div>
+            <div class="home-films">
+                <div class="home-film-item">
+                    <span class="nav-link" onclick="loadPage('love-one')">love.1 (2025)</span>
+                </div>
+                <div class="home-film-item">
+                    <span class="nav-link" onclick="loadPage('which-way')">which//way (2025)</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="home-section">
+            <div class="home-section-title">coming soon</div>
+            <div class="home-films">
+                <div class="home-film-item">
+                    <span class="nav-link" onclick="loadPage('lovers')">The Lovers (2026)</span>
+                </div>
+                <div class="home-film-item">
+                    <span class="nav-link" onclick="loadPage('horror')">HORROR (2026)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`,
+    
+    about: `
+<div class="about-container">
+    <div class="about-header">
+        <h2 class="about-title">about</h2>
+    </div>
+    
+    <div class="about-content">
+        <div class="about-section">
+            <div class="about-section-title">focus</div>
+            <div class="about-description">
+                <p>unconventional approaches to storytelling which incorporate modern technology.</p>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <div class="about-section-title">including, but not limited to</div>
+            <div class="about-list">
+                <div class="about-item">1. ai-generated / supported content<span class="help-icon">?<span class="tooltip">using artificial intelligence to generate or enhance visual elements, and to explore new ways of storytelling</span></span></div>
+                <div class="about-item">2. interactive / adaptive storytelling<span class="help-icon">?<span class="tooltip">stories that change based on viewer input, choices, or real-time data, creating personalized narrative experiences</span></span></div>
+                <div class="about-item">3. multimedia / polymedia experiences<span class="help-icon">?<span class="tooltip">combining multiple forms of media (film, images, web, apps, AR/VR) to create immersive, cross-platform storytelling</span></span></div>
+                <div class="about-item">4. experimental cinematography / editing<span class="help-icon">?<span class="tooltip">pushing the boundaries of traditional filming and editing techniques through new technologies and unconventional approaches</span></span></div>
+                <div class="about-item">5. unconventional distribution methods<span class="help-icon">?<span class="tooltip">exploring new ways to share and experience films beyond the traditional theatrical experience</span></span></div>
+            </div>
+        </div>
+        
+        <div class="about-section">
+            <div class="about-section-title">contact</div>
+            <div class="about-links">
+                <a href="mailto:contact@proof-of-concept.ca" class="external-link">email</a> // 
+                <a target="_blank" href="https://www.instagram.com/youngthugfan40/" class="external-link">instagram</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="about-footer">
+        <span class="nav-link" onclick="loadPage('home')">← back to home</span>
+    </div>
+</div>
+`,
+    
+    'love-one': `
+<div class="film-container">
+    <div class="film-header">
+        <h2 class="film-title">love.1 (2025)</h2>
+        <div class="film-tags">
+            <span class="film-tag">40 seconds</span>
+            <span class="film-tag">instagram reel</span>
+            <span class="film-tag">romance</span>
+        </div>
+    </div>
+    
+    <div class="film-content">
+        <div class="film-section">
+            <div class="film-section-title">synopsis</div>
+            <div class="film-description">
+                <p>a visual-poem on the themes of love.</p>
+            </div>
+        </div>
+        
+        <div class="film-section">
+            <div class="film-section-title">watch & rate</div>
+            <div class="film-links">
+                <a target="_blank" href="https://www.instagram.com/reel/DKX_rDKygW5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="external-link">watch</a> // 
+                <a target="_blank" href="https://letterboxd.com/film/love1/" class="external-link">letterboxd</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="film-meta">
+        <div class="film-meta-item">
+            <span class="film-meta-label">year</span>
+            <span class="film-meta-value">2025</span>
+        </div>
+        <div class="film-meta-item">
+            <span class="film-meta-label">format</span>
+            <span class="film-meta-value">digital</span>
+        </div>
+        <div class="film-meta-item">
+            <span class="film-meta-label">status</span>
+            <span class="film-meta-value">released</span>
+        </div>
+    </div>
+    
+    <div class="film-footer">
+        <span class="nav-link" onclick="loadPage('home')">← back to films</span>
+    </div>
+</div>
+`,
+
+'which-way': `
+<div class="film-container">
+    <div class="film-header">
+        <h2 class="film-title">which//way (2025)</h2>
+        <div class="film-tags">
+            <span class="film-tag">3 minutes</span>
+            <span class="film-tag">instagram reel</span>
+            <span class="film-tag">crime</span>
+        </div>
+    </div>
+    
+    <div class="film-content">
+        <div class="film-section">
+            <div class="film-section-title">synopsis</div>
+            <div class="film-description">
+                <p>stock footage tells the story of two lives — before and after a financial crisis.</p>
+            </div>
+        </div>
+        
+        <div class="film-section">
+            <div class="film-section-title">watch & rate</div>
+            <div class="film-links">
+                <a target="_blank" href="" class="external-link">coming soon</a> // 
+                <a target="_blank" href="https://letterboxd.com/film/which-way/" class="external-link">letterboxd</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="film-meta">
+        <div class="film-meta-item">
+            <span class="film-meta-label">year</span>
+            <span class="film-meta-value">2025</span>
+        </div>
+        <div class="film-meta-item">
+            <span class="film-meta-label">format</span>
+            <span class="film-meta-value">digital</span>
+        </div>
+        <div class="film-meta-item">
+            <span class="film-meta-label">status</span>
+            <span class="film-meta-value">post-production</span>
+        </div>
+    </div>
+    
+    <div class="film-footer">
+        <span class="nav-link" onclick="loadPage('home')">← back to films</span>
+    </div>
+</div>
+`,
+
+lovers: `
+<div class="film-container">
+    <div class="film-header">
+        <h2 class="film-title">The Lovers (2026)</h2>
+        <div class="film-tags">
+            <span class="film-tag">coming soon</span>
+            <span class="film-tag">romance</span>
+        </div>
+    </div>
+    
+    <div class="film-content">
+        <div class="film-section">
+            <div class="film-section-title">synopsis</div>
+            <div class="film-description">
+                <p>follows pivotal moments between two people, who may or may not be in a relationship.</p>
+            </div>
+        </div>
+        
+        <div class="film-section">
+            <div class="film-section-title">development</div>
+            <div class="film-links">
+                <span style="opacity: 0.6;">pre-production</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="film-meta">
+        <div class="film-meta-item">
+            <span class="film-meta-label">year</span>
+            <span class="film-meta-value">2026</span>
+        </div>
+        <div class="film-meta-item">
+            <span class="film-meta-label">format</span>
+            <span class="film-meta-value">interactive</span>
+        </div>
+        <div class="film-meta-item">
+            <span class="film-meta-label">status</span>
+            <span class="film-meta-value">development</span>
+        </div>
+    </div>
+    
+    <div class="film-footer">
+        <span class="nav-link" onclick="loadPage('home')">← back to films</span>
+    </div>
+</div>
+`,
+
+horror: `
+<div class="film-container">
+    <div class="film-header">
+        <h2 class="film-title">HORROR (2026)</h2>
+        <div class="film-tags">
+            <span class="film-tag">coming soon</span>
+            <span class="film-tag">horror</span>
+        </div>
+    </div>
+    
+    <div class="film-content">
+        <div class="film-section">
+            <div class="film-section-title">synopsis</div>
+            <div class="film-description">
+                <p>a multimedia experience tailored to the viewer's worst fears.</p>
+            </div>
+        </div>
+        
+        <div class="film-section">
+            <div class="film-section-title">development</div>
+            <div class="film-links">
+                <span style="opacity: 0.6;">research</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="film-meta">
+        <div class="film-meta-item">
+            <span class="film-meta-label">year</span>
+            <span class="film-meta-value">2026</span>
+        </div>
+        <div class="film-meta-item">
+            <span class="film-meta-label">format</span>
+            <span class="film-meta-value">adaptive</span>
+        </div>
+        <div class="film-meta-item">
+            <span class="film-meta-label">status</span>
+            <span class="film-meta-value">concept</span>
+        </div>
+    </div>
+    
+    <div class="film-footer">
+        <span class="nav-link" onclick="loadPage('home')">← back to films</span>
+    </div>
+</div>
+`
+};
 
         // Audio setup for click sounds
         let audioContext;
@@ -1113,6 +1865,20 @@
             }
         }
 
+// Function to trigger fade-in animation for UI elements
+function triggerUIFadeIn() {
+    // Small delay to ensure main content starts fading first
+    setTimeout(() => {
+        const fadeElements = document.querySelectorAll('.fade-in-element');
+        fadeElements.forEach((element, index) => {
+            // Stagger the animations slightly for a more natural feel
+            setTimeout(() => {
+                element.classList.add('loaded');
+            }, index * 50);
+        });
+    }, 200);
+}
+
         // Function to update color availability
         function updateColorAvailability() {
             document.querySelectorAll('.color-option').forEach(option => {
@@ -1135,7 +1901,7 @@
                 bgColor: 'white',
                 textColor: 'black',
                 drawColor: 'black',
-                title: 'PROOFOFCONCEPT Prod.',
+                title: 'PROOFOFCONCEPT Productions',
                 performanceMode: isMobile() // Keep performance mode on mobile
             };
             
@@ -1249,7 +2015,7 @@
                     } else {
                         playClickSound();
                     }
-                } else if (e.target.classList.contains('external-link')) {
+                } else if (e.target.classList.contains('external-link') || e.target.classList.contains('social-icon')) {
                     playClickSound();
                 }
             });
@@ -1274,6 +2040,9 @@
             
             // Load home page
             loadPage('home');
+    
+            // Trigger UI fade-in animation
+            triggerUIFadeIn();
         });
 
         // Handle browser back/forward buttons

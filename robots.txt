@@ -1,0 +1,38 @@
+# robots.txt for PROOFOFCONCEPT Productions
+# https://proof-of-concept.ca/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://proof-of-concept.ca/sitemap.xml
+
+# Crawl-delay (optional - sets delay between requests in seconds)
+Crawl-delay: 1
+
+# Block access to any admin or settings files if they exist
+Disallow: /admin/
+Disallow: /settings/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /build/
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /

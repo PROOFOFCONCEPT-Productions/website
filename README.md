@@ -1,6 +1,7 @@
 ### changelog (07/02):
 - updated / improved seo
 - added on-website player for films (love.1)
+- added ability to download films in .mp4 format
 - added schema markup
 - sound now plays when 'esc' is used to close settings menu
 

@@ -1,3 +1,9 @@
+### changelog (07/02):
+- updated / improved seo
+- added on-website player for films (love.1)
+- added schema markup
+- sound now plays when 'esc' is used to close settings menu
+
 ### changelog (06/19):
 - pages have been redone to be clearer, provide more info
 - added links to both instagram & email on home page

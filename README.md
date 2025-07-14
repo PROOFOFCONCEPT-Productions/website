@@ -1,3 +1,7 @@
+### changelog (07/14)
+- added [#COMMUNITYFILM](https://proof-of-concept.ca/#communityfilm)
+- updated shortcuts
+
 ### changelog (07/02):
 - updated / improved seo
 - added on-website player for films (love.1)

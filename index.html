@@ -1363,7 +1363,10 @@ body.dark-theme .tooltip::after {
         <span class="shortcut-key" data-key="a">a</span>: about • 
         <span class="shortcut-key" data-key="c">c</span>: contact • 
         <span class="shortcut-key" data-key="s">s</span>: settings • 
-        <span class="shortcut-key" data-key="m">m</span>: mute
+        <span class="shortcut-key" data-key="m">m</span>: mute • 
+        <span class="shortcut-key" data-key="3">3</span>: #COMMUNITYFILM • 
+        <span class="shortcut-key" data-key="4">4</span>: The Lovers • 
+        <span class="shortcut-key" data-key="5">5</span>: HORROR
     </div>
 
     <canvas id="drawing-canvas"></canvas>
@@ -1576,6 +1579,9 @@ body.dark-theme .tooltip::after {
         <div class="home-section">
             <div class="home-section-title">coming soon</div>
             <div class="home-films">
+                <div class="home-film-item">
+                    <span class="nav-link" onclick="loadPage('communityfilm')">#COMMUNITYFILM (2025)</span>
+                </div>
                 <div class="home-film-item">
                     <span class="nav-link" onclick="loadPage('lovers')">The Lovers (2026)</span>
                 </div>
@@ -1818,6 +1824,53 @@ horror: `
         <div class="film-meta-item">
             <span class="film-meta-label">status</span>
             <span class="film-meta-value">concept</span>
+        </div>
+    </div>
+    
+    <div class="film-footer">
+        <span class="nav-link" onclick="loadPage('home')">← back to films</span>
+    </div>
+</div>
+`,
+
+'communityfilm': `
+<div class="film-container">
+    <div class="film-header">
+        <h2 class="film-title">#COMMUNITYFILM (2025)</h2>
+        <div class="film-tags">
+            <span class="film-tag">coming soon</span>
+            <span class="film-tag">experience</span>
+        </div>
+    </div>
+    
+    <div class="film-content">
+        <div class="film-section">
+            <div class="film-section-title">synopsis</div>
+            <div class="film-description">
+                <p>a community-driven, democratically edited film-experience.</p>
+            </div>
+        </div>
+        
+        <div class="film-section">
+            <div class="film-section-title">development</div>
+            <div class="film-links">
+                <span style="opacity: 0.6;">post-production</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="film-meta">
+        <div class="film-meta-item">
+            <span class="film-meta-label">year</span>
+            <span class="film-meta-value">2025</span>
+        </div>
+        <div class="film-meta-item">
+            <span class="film-meta-label">format</span>
+            <span class="film-meta-value">interactive</span>
+        </div>
+        <div class="film-meta-item">
+            <span class="film-meta-label">status</span>
+            <span class="film-meta-value">post-production</span>
         </div>
     </div>
     
@@ -2175,11 +2228,17 @@ horror: `
                     break;
                 case '3':
                     if (!settings.performanceMode) {
-                        loadPage('lovers');
+                        loadPage('communityfilm');
                         handled = true;
                     }
                     break;
                 case '4':
+                    if (!settings.performanceMode) {
+                        loadPage('lovers');
+                        handled = true;
+                    }
+                    break;
+                case '5':
                     if (!settings.performanceMode) {
                         loadPage('horror');
                         handled = true;
@@ -2708,6 +2767,17 @@ function triggerUIFadeIn() {
           "dateCreated": "2026",
           "genre": ["Horror", "Adaptive"],
           "description": "A multimedia experience tailored to the viewer's worst fears.",
+          "url": "https://proof-of-concept.ca/",
+          "image": "https://proof-of-concept.ca/assets/preview.jpg",
+          "inLanguage": "en"
+        },
+        {
+          "@type": "CreativeWork",
+          "@id": "https://proof-of-concept.ca/#communityfilm",
+          "name": "#COMMUNITYFILM",
+          "dateCreated": "2025",
+          "genre": ["Experience"],
+          "description": "A community-driven film, democratically editied.",
           "url": "https://proof-of-concept.ca/",
           "image": "https://proof-of-concept.ca/assets/preview.jpg",
           "inLanguage": "en"

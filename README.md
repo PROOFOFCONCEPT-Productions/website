@@ -1,6 +1,7 @@
 ### changelog (07/14)
 - added [#COMMUNITYFILM](https://proof-of-concept.ca/#communityfilm)
 - updated shortcuts
+- social icons now use SVGs, are visually aligned, and bottom-align with the centered footer
 
 ### changelog (07/02):
 - updated / improved seo
